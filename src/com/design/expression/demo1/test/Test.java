@@ -5,6 +5,11 @@ import com.design.expression.demo1.expression.Expression;
 import com.design.expression.demo1.expression.OrExpression;
 import com.design.expression.demo1.expression.TerminalExpression;
 
+/**
+ * 解释器模式 
+ * @author lx
+ *
+ */
 public class Test {
 	public static void main(String[] args) {
 		boolean result1 = manSingleExpression("hello , i'm luyisi, single woman");
