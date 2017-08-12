@@ -1,4 +1,4 @@
-package com.design.visitor.demo1;
+package com.design.visitor.demo1.visit;
 
 public interface ComputerPartVisitor {
 	public void visit(Keyboard keyboard);

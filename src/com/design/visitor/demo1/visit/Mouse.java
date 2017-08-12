@@ -1,6 +1,6 @@
-package com.design.visitor.demo1;
+package com.design.visitor.demo1.visit;
 
-public class Keyboard implements ComputerPart{
+public class Mouse implements ComputerPart{
 
 	@Override
 	public void accept(ComputerPartVisitor computerPartVisitor) {
