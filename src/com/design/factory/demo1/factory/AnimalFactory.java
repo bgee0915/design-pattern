@@ -6,6 +6,7 @@ public class AnimalFactory {
 	public static Animal getInstance(String className) {
 		Animal animal = null;
 		try {
+//			通过类全名转成相对应的 Class 并实例化
 			animal = (Animal) Class.forName(className).newInstance();
 		} catch (InstantiationException e) {
 			e.printStackTrace();

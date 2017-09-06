@@ -9,6 +9,8 @@ import java.io.OutputStream;
 import java.util.Properties;
 
 public class InitProperties {
+	
+//	获取 properties 对象
 	public static Properties getProperties() {
 		
 		Properties properties = new Properties();
@@ -35,13 +37,15 @@ public class InitProperties {
 			return properties;
 		}
 		
+//		如果不存在 properties 则新建一个
+//		初始化数据
 		properties.put("dog", "com.design.factory.demo1.animal.Dog");
 		properties.put("loong", "com.design.factory.demo1.animal.Loong");
 		
 		OutputStream out = null;
 		try {
 			out = new FileOutputStream(file);
-			properties.store(out, "test");
+			properties.store(out, "test"); // test xx.properties 内的注释
 		} catch (IOException oute) {
 			oute.printStackTrace();
 			return null;
@@ -56,4 +60,6 @@ public class InitProperties {
 		
 		return properties;
 	}
+	
+	
 }
