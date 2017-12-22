@@ -1,0 +1,53 @@
+装饰模式小结:
+    突然觉得装饰模式有点像 递归.... 不知道对不对
+    只不过递归是自己调用自己，一般是将结果不断的 "累积" ，直到达到条件则跳出来
+
+    装饰模式呢，子类和父类都具有相同的行为（方法 fun()) , 子类所调用的 fun()里面会调用构造函数里的参数 父类或者继承父类的其它子类的 fun() （也可以是接口）
+    造成了一直不断反复调用 fun() 的现象并将结果 "累积" , 只是调用fun()是由多个不同类却有同一个父类的对象去分别调用。
+    这样就形成了 组合的方式， 可以方便的组合不同的功能。
+
+
+
+    public interface Print() {
+        public void print();
+    }
+
+    public class PrintX(){
+        public void print(){
+            System.out.println("i'm is printx ");
+        }
+    }
+
+
+
+    public class Decorator1 implements Print(){
+        private Print print;
+        Decorator1(Print print){
+            this.print = print;
+        }
+
+        public void print(){
+            print.print();
+            System.out.println(" decorator1 ");
+        }
+    }
+
+    public class Decorator2 implements Print(){
+        private Print print;
+        Decorator2(Print print){
+            this.print = print;
+        }
+
+        public void print(){
+            print.print();
+            System.out.println(" decorator2 ");
+        }
+    }
+
+    public class Test(){
+        public static void main(String[] args){
+            Print Decorator2 = new Decorator2(new Decorator1(new PrintX()));
+            Decorator2.print();
+        }
+    }
+
