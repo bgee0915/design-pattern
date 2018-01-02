@@ -13,7 +13,7 @@ public class Food {
 
     public void show(){
         for(String s : foodList){
-            System.out.print(s + " ");
+            System.out.print(s + "  \n");
         }
     }
 

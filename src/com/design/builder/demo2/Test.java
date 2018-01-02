@@ -8,6 +8,12 @@ public class Test {
         Food food = builder1.getFood();     // 由建造者返回产品
         food.show();
 
+        System.out.println("========================================");
+
+        Builder builder2 = new Chef2();
+        boss.build(builder2);
+        Food food2 = builder2.getFood();
+        food2.show();
 
     }
 }
