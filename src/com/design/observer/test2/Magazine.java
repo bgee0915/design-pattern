@@ -8,6 +8,14 @@ public class Magazine implements Subject{
     private int cost;
     List<Observer> list = new ArrayList<>();
 
+    public Magazine() {
+    }
+
+    public Magazine(String mzName, int cost) {
+        this.mzName = mzName;
+        this.cost = cost;
+    }
+
     public String getMzName() {
         return mzName;
     }
@@ -39,7 +47,7 @@ public class Magazine implements Subject{
     @Override
     public Subject notify_a() {
         for(Observer os : list){
-            os.update();
+            os.update(this.mzName,this.cost);
         }
         return this;
     }
